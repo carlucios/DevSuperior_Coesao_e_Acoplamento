@@ -1,5 +1,6 @@
 package com.clsantos.desafio1;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,6 @@ public class Desafio1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		System.out.println("Faz nada");
 	}
 }
