@@ -8,11 +8,8 @@ import org.springframework.stereotype.Service;
 public class OrderService {
     private Double totalSum;
 
+    @Autowired
     private ShippingService shippingService;
-
-    public OrderService(ShippingService shippingService) {
-        this.shippingService = shippingService;
-    }
 
     public Double total(Order order) {
         totalSum = order.getBasic()*(1-order.getDiscount()/100) +

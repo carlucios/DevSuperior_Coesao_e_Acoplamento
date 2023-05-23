@@ -13,14 +13,12 @@ import java.util.Scanner;
 @SpringBootApplication
 public class Desafio1Application implements CommandLineRunner {
 
+	@Autowired
 	private OrderService orderService;
 	private Integer code;
 	private double basic;
 	private double discount;
 
-	public Desafio1Application(OrderService orderService) {
-		this.orderService = orderService;
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(Desafio1Application.class, args);
