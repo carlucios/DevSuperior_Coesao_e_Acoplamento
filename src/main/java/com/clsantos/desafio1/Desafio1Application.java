@@ -28,16 +28,16 @@ public class Desafio1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//Scanner s = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
 
-		//System.out.println("Digite o código do produto");
-		code = 1309;//s.nextInt();
+		System.out.println("Digite o código do produto");
+		code = s.nextInt();
 
-		//System.out.println("Digite o valor básico");
-		basic = 95.90;//s.nextDouble();
+		System.out.println("Digite o valor básico");
+		basic = s.nextDouble();
 
-		//System.out.println("Digite o valor percentual de desconto");
-		discount = 0.0;//s.nextDouble();
+		System.out.println("Digite o valor percentual de desconto");
+		discount = s.nextDouble();
 
 		Order order = new Order(code, basic, discount);
 		System.out.printf("Pedido código %d%nValor total: R$ %.2f", code, orderService.total(order));
