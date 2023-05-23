@@ -1,12 +1,26 @@
 package com.clsantos.desafio1;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
+import com.clsantos.desafio1.entities.Order;
+import com.clsantos.desafio1.services.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Scanner;
+
 @SpringBootApplication
 public class Desafio1Application implements CommandLineRunner {
+
+	private OrderService orderService;
+	private Integer code;
+	private double basic;
+	private double discount;
+
+	public Desafio1Application(OrderService orderService) {
+		this.orderService = orderService;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(Desafio1Application.class, args);
@@ -14,6 +28,18 @@ public class Desafio1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Faz nada");
+		//Scanner s = new Scanner(System.in);
+
+		//System.out.println("Digite o código do produto");
+		code = 1309;//s.nextInt();
+
+		//System.out.println("Digite o valor básico");
+		basic = 95.90;//s.nextDouble();
+
+		//System.out.println("Digite o valor percentual de desconto");
+		discount = 0.0;//s.nextDouble();
+
+		Order order = new Order(code, basic, discount);
+		System.out.printf("Pedido código %d%nValor total: R$ %.2f", code, orderService.total(order));
 	}
 }

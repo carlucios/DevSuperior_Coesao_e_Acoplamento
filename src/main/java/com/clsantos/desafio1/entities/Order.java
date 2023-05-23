@@ -7,6 +7,15 @@ public class Order {
         return code;
     }
 
+    public Order() {
+    }
+
+    public Order(Integer code, Double basic, Double discount) {
+        this.code = code;
+        this.basic = basic;
+        this.discount = discount;
+    }
+
     public void setCode(Integer code) {
         this.code = code;
     }
